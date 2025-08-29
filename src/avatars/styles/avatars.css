@@ -1,1 +1,36 @@
 /* 여기에 스타일을 구현해 주세요 */
+.avatars {
+  width: 350px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+
+  img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+  }
+}
+
+.avatars > div {
+  float: left;
+  margin: 10px;
+  position: relative;
+}
+
+.status {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+.online {
+  background-color: #4cfe88;
+}
+
+.offline {
+  background-color: #dbdbdb;
+}
