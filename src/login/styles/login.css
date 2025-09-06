@@ -1,1 +1,159 @@
 /* CSS를 활용하여 레이아웃 및 스타일링을 완성해주세요 */
+:root {
+  --font-size: 1rem;
+  --black: #121212;
+  --white: #fff;
+  --naver-color: #03cf5d;
+  --border-color: #dadada;
+  --focus-color: #e9f0fd;
+  --ip-color: #999999;
+  --error-color: red;
+}
+
+/* 화면 정중앙 배치 */
+body {
+  /* background: yellow; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 0.875rem;
+}
+
+/* 로그인 박스 */
+.login {
+  /* background: antiquewhite; */
+  width: 31.25rem;
+  height: 13.5rem;
+  text-align: center;
+}
+
+.logo {
+  margin: 0 7.1875rem;
+}
+
+.login-box {
+  width: 100%;
+  height: 13.5rem;
+  margin-top: 3.125rem;
+  font-size: 0.875rem;
+}
+
+.login-box input {
+  width: 28.75rem;
+  height: 3rem;
+  box-sizing: border-box;
+  border: 0.0625rem solid #dadada;
+}
+
+.login-box input:focus {
+  border: 0.0625rem solid var(--naver-color);
+  outline: none;
+  background: var(--focus-color);
+}
+
+#userId {
+  margin-bottom: 0.625rem;
+}
+
+#userPw {
+  margin-bottom: 1.25rem;
+}
+
+.login-btn {
+  background: var(--naver-color);
+  color: var(--white);
+  width: 28.75rem;
+  height: 2.8125rem;
+  font-size: var(--font-size);
+  font-weight: var(--font-size);
+  border: 0.0625rem solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  margin-bottom: 0.625rem;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.keep-login {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: var(--font-size);
+}
+
+.keep-login input[type='checkbox'] {
+  display: none;
+}
+
+.keep-login .checked {
+  display: none;
+  margin-right: 5px;
+}
+
+.keep-login .unchecked {
+  display: inline;
+  margin-right: 5px;
+}
+
+.keep-login input[type='checkbox']:checked ~ .checked {
+  display: inline;
+}
+.keep-login input[type='checkbox']:checked ~ .unchecked {
+  display: none;
+}
+
+.ip {
+  text-decoration: none;
+}
+
+.ip span {
+  color: var(--ip-color);
+  margin-left: 0.5rem;
+}
+
+/* sr-only 숨기기 (아이디,비밀번호,네이버) */
+.sr-only {
+  position: absolute;
+  width: 0.0625rem;
+  height: 0.0625rem;
+  margin: -0.0625rem;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  border: 0;
+}
+
+/* 오류 문구 숨기기 */
+.error {
+  display: none;
+  color: var(--error-color);
+  font-size: 0.875rem;
+}
+
+input:invalid:focus + .error,
+input:invalid:not(:placeholder-shown) + .error {
+  display: block;
+}
+
+a:visited {
+  color: var(--black);
+}
+
+/* 반응형 - 데스크탑 */
+
+@media (min-width: 768px) {
+  .login {
+    max-width: 500px;
+  }
+
+  @media (max-width: 767px) {
+    .ip {
+      display: none;
+    }
+  }
+}
